@@ -14,14 +14,23 @@ import static java.util.UUID.randomUUID;
 public class ResortleController {
 
     @GetMapping()
-    public List<Hotel> getHotelList() {
-        Hotel hotel = Hotel.builder().hotelId(randomUUID().toString())
-                .hotelName(randomUUID().toString())
-                .hotelAddress(randomUUID().toString())
-                .hotelLocation(randomUUID().toString())
-                .hotelZipcode(randomUUID().toString())
+    public List<HotelResponse> getHotelList() {
+        HotelResponse hotel1 = HotelResponse.builder()
+                .hotelName("Taj Hotel")
+                .hotelAddress("Andheri West Post")
+                .hotelLocation("Mumbai")
+                .hotelZipcode("400001")
                 .build();
-        return List.of(hotel);
+
+        HotelResponse hotel2 = HotelResponse.builder()
+                .hotelName("Minerva Grand")
+                .hotelAddress("SD Road, Main Street")
+                .hotelLocation("Hyderabad")
+                .hotelZipcode("65220")
+                .build();
+
+
+        return List.of(hotel1, hotel2);
     }
 
     @PostMapping()
@@ -33,6 +42,7 @@ public class ResortleController {
                 .hotelLocation(hotelRequest.hotelLocation())
                 .hotelZipcode(hotelRequest.hotelZipcode())
                 .build();
+        System.out.println("Generated Hotel Id: " + hotel.hotelId() + " HotelName: " + hotel.hotelName());
         return HotelResponse.builder()
                 .hotelName(hotel.hotelName())
                 .hotelAddress(hotel.hotelAddress())
