@@ -3,3 +3,9 @@ server:
 springdoc:
   swagger-ui:
     path: /swagger-ui-custom.html
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resortle
+    username: admin
+    password: admin
