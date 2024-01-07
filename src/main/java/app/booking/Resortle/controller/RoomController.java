@@ -21,4 +21,28 @@ public class RoomController {
         return roomService.retrieveRoomInfo(hotelId);
     }
 
+    @GetMapping
+    public HotelInfo retrieveAmenities(
+            @RequestHeader(value = "hotelId") String hotelId) {
+        return roomService.retrieveRoomInfo(hotelId);
+    }
+
+    @GetMapping
+    public HotelInfo retrieveInfo(
+            @RequestHeader(value = "hotelId") String hotelId) {
+        return roomService.retrieveRoomInfo(hotelId);
+    }
+
+    @GetMapping
+    public HotelInfo retrieveData(
+            @RequestHeader(value = "hotelId") String hotelId) {
+        return roomService.retrieveRoomInfo(hotelId);
+    }
+
+
+
+
+
+
+
 }
