@@ -10,7 +10,7 @@ import java.util.List;
 public class RoomServiceImpl implements RoomService {
 
     @Override
-    public HotelInfo retrieveRoomInfo(String hotelId) {
+    public HotelInfo retrieveHotelInfo(String hotelId) {
         RoomInfo roomInfo1 = RoomInfo.builder()
                 .roomNo("1A101")
                 .roomType("Executive Room")
@@ -33,6 +33,18 @@ public class RoomServiceImpl implements RoomService {
                 .hotelLocation("Madurai")
                 .hotelZipcode("562289")
                 .rooms(List.of(roomInfo1, roomInfo2))
+                .build();
+    }
+
+    @Override
+    public RoomInfo retrieveRoomInfo(String hotelId, String roomId) {
+        return RoomInfo.builder()
+                .roomNo("1A101")
+                .roomType("Executive Room")
+                .roomCapacity(2)
+                .roomPrice(2598.0)
+                .roomBookedBy("None")
+                .roomStatus("Available")
                 .build();
     }
 }
