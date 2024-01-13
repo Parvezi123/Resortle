@@ -6,7 +6,11 @@ springdoc:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/resortle
+    url: jdbc:postgresql://localhost:5432/resortle_db
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
