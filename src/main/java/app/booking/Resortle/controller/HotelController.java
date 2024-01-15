@@ -3,6 +3,7 @@ package app.booking.Resortle.controller;
 import app.booking.Resortle.dto.HotelRequest;
 import app.booking.Resortle.dto.HotelResponse;
 import app.booking.Resortle.model.Hotel;
+import app.booking.Resortle.service.HotelService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,26 +12,13 @@ import static java.util.UUID.randomUUID;
 
 @RestController
 @RequestMapping("/api/hotel")
-public class ResortleController {
+public class HotelController {
+
+    private HotelService hotelService;
 
     @GetMapping()
     public List<HotelResponse> getHotelList() {
-        HotelResponse hotel1 = HotelResponse.builder()
-                .hotelName("Taj Hotel")
-                .hotelAddress("Andheri West Post")
-                .hotelLocation("Mumbai")
-                .hotelZipcode("400001")
-                .build();
-
-        HotelResponse hotel2 = HotelResponse.builder()
-                .hotelName("Minerva Grand")
-                .hotelAddress("SD Road, Main Street")
-                .hotelLocation("Hyderabad")
-                .hotelZipcode("65220")
-                .build();
-
-
-        return List.of(hotel1, hotel2);
+        return hotelService.getHotelList();
     }
 
     @PostMapping()
