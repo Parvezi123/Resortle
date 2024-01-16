@@ -21,21 +21,13 @@ public class HotelController {
         return hotelService.getHotelList();
     }
 
+    @GetMapping("/{hotelId}")
+    public HotelResponse getHotelById(@PathVariable String hotelId) {
+        return hotelService.getHotelById(hotelId);
+    }
+
     @PostMapping()
     public HotelResponse addHotel(@RequestBody HotelRequest hotelRequest) {
-        Hotel hotel = Hotel.builder()
-                .hotelId(randomUUID().toString())
-                .hotelName(hotelRequest.hotelName())
-                .hotelAddress(hotelRequest.hotelAddress())
-                .hotelLocation(hotelRequest.hotelLocation())
-                .hotelZipcode(hotelRequest.hotelZipcode())
-                .build();
-        System.out.println("Generated Hotel Id: " + hotel.hotelId() + " HotelName: " + hotel.hotelName());
-        return HotelResponse.builder()
-                .hotelName(hotel.hotelName())
-                .hotelAddress(hotel.hotelAddress())
-                .hotelLocation(hotel.hotelLocation())
-                .hotelZipcode(hotel.hotelZipcode())
-                .build();
+        return hotelService.addHotel(hotelRequest);
     }
 }
