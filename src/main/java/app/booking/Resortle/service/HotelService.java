@@ -12,4 +12,6 @@ public interface HotelService {
     HotelResponse getHotelById(String hotelId);
 
     HotelResponse addHotel(HotelRequest hotelRequest);
+
+    void deleteHotelById(String hotelId);
 }

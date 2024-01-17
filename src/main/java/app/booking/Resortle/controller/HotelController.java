@@ -30,4 +30,9 @@ public class HotelController {
     public HotelResponse addHotel(@RequestBody HotelRequest hotelRequest) {
         return hotelService.addHotel(hotelRequest);
     }
+
+    @DeleteMapping("/{hotelId}")
+    public void deleteHotel(@PathVariable String hotelId) {
+        return hotelService.deleteHotelById(hotelId);
+    }
 }
