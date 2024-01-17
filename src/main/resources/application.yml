@@ -1,0 +1,16 @@
+server:
+  port: 9000
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/resortle_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
