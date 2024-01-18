@@ -53,4 +53,9 @@ public class HotelServiceImpl implements HotelService {
                 .hotelZipcode(hotel.hotelZipcode())
                 .build();
     }
+
+    @Override
+    public void deleteHotelById(String hotelId) {
+
+    }
 }

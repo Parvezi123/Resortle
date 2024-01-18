@@ -15,26 +15,26 @@ public class RoomController {
 
     @GetMapping
     public HotelInfo retrieveRoom(
-            @RequestHeader(value = "hotelId") String hotelId) {
-        return roomService.retrieveHotelInfo(hotelId);
+            @RequestHeader(value = "roomId") String roomId) {
+        return roomService.retrieveHotelInfo(roomId);
     }
 
-    @GetMapping("/{roomId}/amenities")
+    @GetMapping("/amenities")
     public RoomInfo retrieveAmenities(
-            @RequestHeader(value = "hotelId") String hotelId, @PathVariable String roomId) {
-        return roomService.retrieveRoomInfo(hotelId, roomId);
+            @RequestHeader(value = "roomId") String roomId) {
+        return roomService.retrieveRoomInfo(roomId);
     }
 
     @GetMapping
     public HotelInfo retrieveAmenities(
-            @RequestHeader(value = "hotelId") String hotelId) {
-        return roomService.retrieveRoomInfo(hotelId);
+            @RequestHeader(value = "roomId") String hotelId) {
+        return roomService.retrieveRoomInfo(roomId);
     }
 
     @GetMapping
     public HotelInfo retrieveInfo(
-            @RequestHeader(value = "hotelId") String hotelId) {
-        return roomService.retrieveRoomInfo(hotelId);
+            @RequestHeader(value = "roomId") String hotelId) {
+        return roomService.retrieveRoomInfo(roomId);
     }
 
     @GetMapping
