@@ -33,6 +33,6 @@ public class HotelController {
 
     @DeleteMapping("/{hotelId}")
     public void deleteHotel(@PathVariable String hotelId) {
-        return hotelService.deleteHotelById(hotelId);
+        hotelService.deleteHotelById(hotelId);
     }
 }
