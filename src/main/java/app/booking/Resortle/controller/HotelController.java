@@ -27,8 +27,8 @@ public class HotelController {
     }
 
     @PostMapping()
-    public HotelResponse addHotel(@RequestBody HotelRequest hotelRequest) {
-        return hotelService.addHotel(hotelRequest);
+    public HotelResponse createHotel(@RequestBody HotelRequest hotelRequest) {
+        return hotelService.createHotel(hotelRequest);
     }
 
     @DeleteMapping("/{hotelId}")
