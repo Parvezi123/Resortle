@@ -1,21 +1,23 @@
 version: '3.8'
 services:
-  db:
-    container_name: pg_container
-    image: postgres
-    restart: always
+  postgres:
+    image: postgres:latest
+    container_name: postgresDB
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_DB: resortle_db
     ports:
       - "5432:5432"
+    volumes:
+      - D:\XZomBies\Portfolio\Code\ResortleApp\Resortle\src\main\resources\sqheme.sql:/docker-entrypoint-initdb.d/scheme.sql
   pgadmin:
-    container_name: pgadmin4_container
-    image: dpage/pgadmin4
-    restart: always
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin_container
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: root
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - "5050:80"
+    depends_on:
+      - postgres
