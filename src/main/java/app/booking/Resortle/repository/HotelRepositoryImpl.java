@@ -1,18 +1,21 @@
 package app.booking.Resortle.repository;
 
 import app.booking.Resortle.dto.HotelResponse;
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
 public class HotelRepositoryImpl implements HotelRepository {
 
-    @Autowired
-    private JdbcClient jdbcClient;
+    private final JdbcClient jdbcClient;
+
+    public HotelRepositoryImpl(DataSource dataSource) {
+        this.jdbcClient = JdbcClient.create(dataSource);
+    }
 
 
     @Override
