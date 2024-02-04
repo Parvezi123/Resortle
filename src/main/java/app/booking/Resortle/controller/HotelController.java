@@ -2,14 +2,10 @@ package app.booking.Resortle.controller;
 
 import app.booking.Resortle.dto.HotelRequest;
 import app.booking.Resortle.dto.HotelResponse;
-import app.booking.Resortle.model.Hotel;
 import app.booking.Resortle.service.HotelService;
-import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import static java.util.UUID.randomUUID;
 
 
 @RestController
