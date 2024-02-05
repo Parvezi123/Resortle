@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class HotelServiceImpl implements HotelService {
-    private HotelRepository hotelRepository;
+    private final HotelRepository hotelRepository;
 
     public HotelServiceImpl(HotelRepository hotelRepository) {
         this.hotelRepository = hotelRepository;
